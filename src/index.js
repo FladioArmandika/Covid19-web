@@ -1,13 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { theme, ThemeProvider, CSSReset } from '@chakra-ui/core';
+import { BrowserRouter } from 'react-router-dom';
+import App from './pages/App';
+
+const customTheme = {
+  ...theme,
+  colors: {
+    ...theme.colors,
+    brand: {
+      900: "#1a365d",
+      800: "#153e75",
+      700: "#2a69ac",
+    },
+  },
+};
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ThemeProvider theme={customTheme}>
+    <CSSReset/>
+    <BrowserRouter>
+      <App/>
+    </BrowserRouter>
+  </ThemeProvider>,
   document.getElementById('root')
 );
 
