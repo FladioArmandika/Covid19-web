@@ -4,6 +4,8 @@ import * as serviceWorker from './serviceWorker';
 import { theme, ThemeProvider, CSSReset } from '@chakra-ui/core';
 import { BrowserRouter } from 'react-router-dom';
 import App from './pages/App';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 const customTheme = {
   ...theme,
